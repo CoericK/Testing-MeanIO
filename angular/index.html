@@ -1,0 +1,68 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div id="chat" data-ng-app="chatApp">
+		<div data-ng-controller="MainChatCtrl">
+			<div style="float: left; min-width: 450px;">
+				<button data-ng-click="loadSchools()">Load Schools</button>
+				<ol>
+
+
+					<li data-ng-repeat="school in schools">
+						<h3>{{ school.name }}</h3>
+						<h4>ZIP: {{school.zip}}</h4>
+						<h4>Direccion: {{ school.address}}</h4><br/>
+						<button data-ng-click="showName(school.name)" >Muestrame el nombre</button>
+					</li>
+				</ol>
+
+			</div>
+
+			<div style="float: left;">
+				<h2>Create School</h2>
+				<form data-ng-submit="registerSchool()">
+					Name: <input type="text" data-ng-model="school.name"> <br/>
+					ZIP: <input type="text" data-ng-model="school.zip"> <br />
+					Address: <input type="text" data-ng-model="school.address"> <br/>
+
+					<button type="submit"> Create School </button>
+
+				</form>
+			</div>				
+
+
+		</div>
+
+
+		<div data-ng-controller="UsersChatCtrl">
+		</div>		
+
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+	<div id="cameras" data-ng-app="camerasApp">
+		<div data-ng-controller="MainCamerasCtrl">
+
+		</div>
+
+	</div>
+
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+	<script type="text/javascript" src="chat/app.js"></script>
+	<script type="text/javascript" src="cameras/app.js"></script>
+</body>
+
+
+</html>
